@@ -1,4 +1,4 @@
 {
-  "version": "4.6.2",
-  "releaseNotes": "Save buttons at the bottom of the page; restored herd status cards and Android file import."
+  "version": "4.6.3",
+  "releaseNotes": "Fix recurring update notification by synchronizing update checker with current game version."
 }
