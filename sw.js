@@ -1,4 +1,4 @@
-const CACHE_NAME='deer-manager-v4-6-cache-2';
+const CACHE_NAME='deer-manager-v4-6-2-cache-1';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./version.json','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(ASSETS)));
