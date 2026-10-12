@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Deer Manager Sim v4.5</title><meta name="theme-color" content="#172a29"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Deer Manager"><meta name="description" content="Deer Manager Sim: 10 seasons, 1,000 acres, your decisions."><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png"><link rel="apple-touch-icon" href="./icons/icon-192.png"><style>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Deer Manager Sim v4.6</title><meta name="theme-color" content="#172a29"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Deer Manager"><meta name="description" content="Deer Manager Sim: 10 seasons, 1,000 acres, your decisions."><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><style>
 :root{--bg:#172a29;--panel:#284c48;--light:#e8e2ad;--green:#85bc70;--gold:#f3c46b;--ink:#112b2b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#435446,#182b25);color:var(--light);font:15px monospace}main{max-width:930px;margin:auto;padding:14px}h1{font-size:25px;color:var(--gold);text-shadow:3px 3px #182522}h2{font-size:18px;color:var(--gold)}button,select{font:inherit;cursor:pointer;border:2px solid #142522;border-radius:4px;background:var(--gold);color:var(--ink);padding:9px;margin:3px}button:hover{filter:brightness(1.12)}button:disabled{opacity:.4;cursor:not-allowed}.secondary{background:var(--green)}.danger{background:#e89984}.panel{background:var(--panel);border:4px solid #102522;box-shadow:5px 5px #0b1c1b;padding:13px;margin:12px 0}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:7px}.stat{background:#183733;padding:9px;border:2px solid #557e65}.stat b{display:block;color:var(--gold);font-size:19px;margin-top:5px}.layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.map{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.tile{aspect-ratio:1;background:#397e50;border:3px solid #1a4032;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;color:#fff;padding:2px;min-width:0}.tile span{font-size:27px}.tile.selected{outline:3px solid var(--gold);background:#5c9258}.cells{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.cell{background:#4b7350;border:2px solid #142522;aspect-ratio:1;display:grid;place-items:center;font-size:22px}.cell.selected{outline:3px solid var(--gold)}.deer{background:#183733;border:2px solid #577b6b;padding:9px;margin:6px 0;display:flex;align-items:center;justify-content:space-between;gap:7px}.muted{color:#b9cfbd}.hidden{display:none!important}.bar{height:14px;background:#172d29;border:2px solid #142522}.bar>div{height:100%;background:#9bc77b}.footer{font-size:12px;line-height:1.6;color:#c1d6c5}canvas{display:block;width:100%;image-rendering:pixelated;max-width:100%;background:#8dbf79;border:4px solid #142522}#banner{font-size:12px;color:#f3c46b} @media(max-width:680px){.layout{grid-template-columns:1fr}.tile span{font-size:23px}button{padding:9px 7px}h1{font-size:21px}}
 
 #records table,.historyTable{width:100%;border-collapse:collapse;font-size:12px}#records th,#records td,.historyTable th,.historyTable td{border:1px solid #608a74;padding:7px;text-align:left}#records th,.historyTable th{color:#f3c46b;background:#193e36}.scroll{overflow-x:auto}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.importLabel{display:inline-block;background:#85bc70;color:#112b2b;padding:10px;border:2px solid #142522;cursor:pointer}.importLabel input{display:none}.deltaPositive{color:#b4ed9a}.deltaNegative{color:#ffb5a0}.recordRow button{font-size:12px}.miniChart{width:100%;height:170px;background:#193e36;border:2px solid #608a74;image-rendering:auto}#cameraPanel,#huntCameraPanel{margin:12px 0;padding:10px;border:2px solid #608a74;background:#193e36}#cameraPanel table,#huntCameraPanel table{width:100%;border-collapse:collapse;font-size:12px}#cameraPanel td,#cameraPanel th,#huntCameraPanel td,#huntCameraPanel th{padding:6px;border-bottom:1px solid #557e65;text-align:left}#managementDelta,#habitatHistory{margin:12px 0;padding:10px;border:2px solid #608a74;background:#193e36}.reportGlossary{margin:14px 0;padding:12px;border:2px solid #608a74;background:#193e36}.reportGlossary h3{margin-top:0;color:#f3c46b}.reportGlossary dt{font-weight:bold;color:#b4ed9a;margin-top:12px}.reportGlossary dd{margin:4px 0 0 0;line-height:1.5;color:#e3efe0}
@@ -383,11 +383,20 @@ function render(){$('huntSurvey').classList.toggle('hidden',S.phase!=='hunt');fo
  if(matches.length&&matches[0].dist<49)inspect(matches[0].d.id);
 });$('finishSeason').onclick=()=>{if(window.confirm('Simulate all remaining hunting days and pass on every deer encounter? This will end the current hunting season and cannot be undone.'))endSeason()};$('nextSeason').onclick=advance;$('exportHistory').onclick=exportHistory;$('importHistory').onchange=e=>{importHistory(e.target.files[0]);e.target.value=''};$('clearHistory').onclick=()=>{if(confirm('Delete ALL completed game records? Export a backup first.')){localStorage.removeItem(HISTORY_KEY);selectedRecord=null;renderRecords()}};$('restart').onclick=()=>{if(confirm('Start a new game?'))fresh()};$('clearSave').onclick=()=>{if(confirm('Delete saved game and restart?')){localStorage.removeItem(KEY);fresh()}};if(!load())fresh();else render();})();
 </script>
-<script id="pwa-v45">
+<script id="pwa-v46">
 (function(){
   if(!('serviceWorker' in navigator)) return;
   window.addEventListener('load', function(){
-    navigator.serviceWorker.register('./sw.js', {scope:'./'}).catch(function(err){console.warn('Offline app setup unavailable:',err);});
+    navigator.serviceWorker.register('./sw.js', {scope:'./',updateViaCache:'none'}).then(function(reg){
+      window.deerManagerRegistration=reg;
+      reg.addEventListener('updatefound',function(){
+        var worker=reg.installing;
+        if(worker) worker.addEventListener('statechange',function(){
+          if(worker.state==='installed' && navigator.serviceWorker.controller) window.showDeerUpdateNotice('A game update is ready.');
+        });
+      });
+      if(reg.waiting && navigator.serviceWorker.controller) window.showDeerUpdateNotice('A game update is ready.');
+    }).catch(function(err){console.warn('Offline app setup unavailable:',err);});
   });
   var deferredInstall = null;
   window.addEventListener('beforeinstallprompt', function(event){
@@ -400,6 +409,69 @@ function render(){$('huntSurvey').classList.toggle('hidden',S.phase!=='hunt');fo
     button.addEventListener('click',async function(){if(!deferredInstall)return;var prompt=deferredInstall;deferredInstall=null;button.hidden=true;await prompt.prompt();});
     var main=document.querySelector('main');var h1=main&&main.querySelector('h1');if(h1)h1.insertAdjacentElement('afterend',button);
   });
+})();
+</script>
+
+<script id="pwa-updates-v46">
+(function(){
+  'use strict';
+  var CURRENT_VERSION='4.6', lastCheck=0, checking=false, updating=false;
+  var banner;
+  function show(message){
+    if(!banner){
+      banner=document.createElement('aside'); banner.id='gameUpdateBanner';
+      banner.setAttribute('role','status');banner.setAttribute('aria-live','polite');
+      banner.style.cssText='position:fixed;bottom:12px;left:12px;right:12px;max-width:600px;margin:auto;z-index:1000;background:#203b2c;color:#f5e3b6;border:3px solid #e9c98c;padding:12px;box-shadow:0 5px 0 #0d1b14;font:14px monospace;';
+      var text=document.createElement('div');text.id='gameUpdateText';text.style.marginBottom='8px';banner.appendChild(text);
+      var button=document.createElement('button');button.type='button';button.id='gameUpdateNow';button.textContent='UPDATE NOW';
+      button.addEventListener('click',applyUpdate);banner.appendChild(button);
+      document.body.appendChild(banner);
+    }
+    banner.querySelector('#gameUpdateText').textContent=message||'A new game version is available.';
+    banner.hidden=false;
+  }
+  window.showDeerUpdateNotice=show;
+  function newer(a,b){
+    var x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);
+    for(var i=0;i<Math.max(x.length,y.length);i++){
+      if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0);
+    }
+    return false;
+  }
+  function check(force){
+    if(checking||!navigator.onLine||(!force && Date.now()-lastCheck<15*60*1000))return;
+    lastCheck=Date.now();checking=true;
+    fetch('./version.json?check='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('version check unavailable');return r.json()}).then(function(info){
+      if(info&&newer(info.version,CURRENT_VERSION))show('Deer Manager Sim v'+info.version+' is available. Update now to play the latest version.');
+    }).catch(function(){/* Offline or temporarily unavailable: keep playing. */}).finally(function(){checking=false});
+    if(navigator.serviceWorker)navigator.serviceWorker.getRegistration('./').then(function(reg){if(reg){window.deerManagerRegistration=reg;reg.update().catch(function(){});}}).catch(function(){});
+  }
+  function applyUpdate(){
+    if(updating)return;updating=true;
+    var button=banner&&banner.querySelector('#gameUpdateNow');if(button){button.disabled=true;button.textContent='UPDATING...';}
+    // Existing game progress lives in localStorage; no storage clearing occurs here.
+    var reg=window.deerManagerRegistration;
+    if(reg&&reg.waiting){
+      reg.waiting.postMessage({type:'SKIP_WAITING'});
+      // controllerchange fires when the new service worker takes control.
+      setTimeout(function(){window.location.reload();},2500);
+    }else{
+      // version.json may detect a new version before the new service worker is installed.
+      if(reg)reg.update().catch(function(){}).finally(function(){window.location.reload();});
+      else window.location.reload();
+    }
+  }
+  if('serviceWorker' in navigator){
+    var reloading=false;
+    navigator.serviceWorker.addEventListener('controllerchange',function(){
+      if(updating&&!reloading){reloading=true;window.location.reload();}
+    });
+  }
+  window.addEventListener('load',function(){check(true);});
+  window.addEventListener('online',function(){check(true);});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)check(false);});
+  window.addEventListener('focus',function(){check(false);});
+  setInterval(function(){if(!document.hidden)check(false);},15*60*1000);
 })();
 </script>
 </body></html>
