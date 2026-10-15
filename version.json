@@ -1,4 +1,4 @@
 {
-  "version": "7.1",
-  "releaseNotes": "Show all six calculated performance statistics in leaderboard and game details while retaining annual history and comparison charts."
+  "version": "7.2",
+  "releaseNotes": "Limit trophy buck harvest to one per hunting day; management bucks and does remain unlimited."
 }
