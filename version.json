@@ -1,4 +1,4 @@
 {
-  "version": "5.3.1",
-  "releaseNotes": "Fix repeated update notification caused by stale v5.1 version constant in v5.3; preserve approved doe artwork and game saves."
+  "version": "5.4",
+  "releaseNotes": "Show End Season only on Headquarters Cabin screen; preserve existing gameplay, approved doe artwork, and saved games."
 }
