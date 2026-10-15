@@ -1,26 +1,21 @@
 {
-  "id": "./",
   "name": "Deer Manager Sim",
   "short_name": "Deer Manager",
-  "description": "10 Seasons. 1,000 Acres. Your Decisions.",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#172a29",
   "theme_color": "#172a29",
-  "orientation": "any",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "./icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
