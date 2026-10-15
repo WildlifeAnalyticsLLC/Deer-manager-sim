@@ -1,4 +1,4 @@
 {
-  "version": "7.2",
-  "releaseNotes": "Limit trophy buck harvest to one per hunting day; management bucks and does remain unlimited."
+  "version": "7.2.1",
+  "releaseNotes": "Fix repeated update notification by synchronizing running version with published release."
 }
