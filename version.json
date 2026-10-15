@@ -1,4 +1,4 @@
 {
-  "version": "7.3",
-  "releaseNotes": "Delete individual completed game histories with confirmation, preserving other games and the active save."
+  "version": "8.0",
+  "releaseNotes": "Recalibrated forest forage by forest type, thinning, and time since fire; preserved food plots."
 }
