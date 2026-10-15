@@ -1,4 +1,4 @@
 {
-  "version": "5.4",
-  "releaseNotes": "Show End Season only on Headquarters Cabin screen; preserve existing gameplay, approved doe artwork, and saved games."
+  "version": "5.4.1",
+  "releaseNotes": "Hide doe age in the harvest encounter screen; preserve buck details and all v5.4 functionality."
 }
