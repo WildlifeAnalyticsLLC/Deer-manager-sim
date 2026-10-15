@@ -1,4 +1,4 @@
 {
-  "version": "7.2.1",
-  "releaseNotes": "Fix repeated update notification by synchronizing running version with published release."
+  "version": "7.3",
+  "releaseNotes": "Delete individual completed game histories with confirmation, preserving other games and the active save."
 }
