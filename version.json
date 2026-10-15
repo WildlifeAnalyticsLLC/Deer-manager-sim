@@ -1,4 +1,4 @@
 {
-  "version": "5.3",
-  "releaseNotes": "Sharper, more defined doe ears in harvest encounter; individual doe weights hidden in both camera survey views; food plot sunflower replaced with three-leaf clover."
+  "version": "5.3.1",
+  "releaseNotes": "Fix repeated update notification caused by stale v5.1 version constant in v5.3; preserve approved doe artwork and game saves."
 }
