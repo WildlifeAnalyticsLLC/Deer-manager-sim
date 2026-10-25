@@ -35,3 +35,6 @@ Deer Manager Sim™ and associated branding are claimed trademarks of Wildlife A
 This repository does not grant an open-source license. Any use of copyright-protected content beyond applicable legal exceptions requires permission from the relevant rights holder. These notices do not establish ownership of material that is not eligible for protection or that belongs to another rights holder.
 
 All v9.7 aerial backgrounds, mechanics, and saved-game compatibility are retained.
+
+## v10.1
+Five-second sponsored-by splash screen with the Wildlife Analytics, LLC logo on each game opening.
