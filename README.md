@@ -36,5 +36,8 @@ This repository does not grant an open-source license. Any use of copyright-prot
 
 All v9.7 aerial backgrounds, mechanics, and saved-game compatibility are retained.
 
-## v10.1
+## v10.2
 Five-second sponsored-by splash screen with the Wildlife Analytics, LLC logo on each game opening.
+
+## v10.2 — Year 1 property presets
+Default new property: blocks 1–5 unthinned, never-burned pine; blocks 6–10 unthinned, never-burned bottomland hardwood. Removed All pine button. Balanced preset: B1 pine unthinned; B2 pine 70 BA fire age 1; B3 pine clearcut fire age 3; B4 upland unthinned; B5 upland 50 BA fire age 2; B6 upland 25 BA fire age 4; B7 bottomland unthinned; B8 bottomland 50 BA; B9 bottomland clearcut; B10 4 winter, 4 winter+perennial, 4 winter+summer, 8 winter+perennial+summer plots. Bottomland is never burned. Existing saved games remain unchanged until a new game or Balanced preset is selected.
