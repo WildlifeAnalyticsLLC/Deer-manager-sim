@@ -36,11 +36,12 @@ This repository does not grant an open-source license. Any use of copyright-prot
 
 All v9.7 aerial backgrounds, mechanics, and saved-game compatibility are retained.
 
-## v10.4
+## v10.5
 Five-second sponsored-by splash screen with the Wildlife Analytics, LLC logo on each game opening.
 
-## v10.4 — Year 1 property presets
+## v10.5 — Year 1 property presets
 Default new property: blocks 1–5 unthinned, never-burned pine; blocks 6–10 unthinned, never-burned bottomland hardwood. Removed All pine button. Balanced preset: B1 pine unthinned; B2 pine 70 BA fire age 1; B3 pine clearcut fire age 3; B4 upland unthinned; B5 upland 50 BA fire age 2; B6 upland 25 BA fire age 4; B7 bottomland unthinned; B8 bottomland 50 BA; B9 bottomland clearcut; B10 4 winter, 4 winter+perennial, 4 winter+summer, 8 winter+perennial+summer plots. Bottomland is never burned. Existing saved games remain unchanged until a new game or Balanced preset is selected.
-\n## v10.4\nAdded a Default button next to Balanced preset to restore the original five unthinned pine blocks and five unthinned bottomland hardwood blocks, all unburned.\n
-## v10.4
+\n## v10.5\nAdded a Default button next to Balanced preset to restore the original five unthinned pine blocks and five unthinned bottomland hardwood blocks, all unburned.\n
+## v10.5
 Added current-season Harvest Log below Go Hunting in cabin. Shows doe, trophy buck and management buck totals and chronological harvest entries with block, deer ID, name, sex, age and score. Newly harvested deer record hunting block. Existing save games remain compatible; older harvests without a recorded block show a dash.
+\n## v10.5\nBlocks with more than half their cells planted as food plots display one of four aerial food plot scenes, consistently assigned by block number. Each eligible deer has a 50% sighting probability in these blocks versus 25% elsewhere (twice the chance, not a guarantee of exactly twice as many deer).\n
