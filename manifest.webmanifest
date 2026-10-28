@@ -1,7 +1,8 @@
 {
-  "name": "Deer Manager Sim\u2122",
+  "id": "./",
+  "name": "Deer Manager Sim",
   "short_name": "Deer Manager",
-  "description": "Deer population and habitat management simulation",
+  "description": "Deer Manager Sim: 10 seasons, 1,000 acres, your decisions.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
