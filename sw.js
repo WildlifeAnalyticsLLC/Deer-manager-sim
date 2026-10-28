@@ -1,5 +1,5 @@
-/* Deer Manager Sim v11.3: network-first HTML, offline fallback, preserve localStorage. */
-const CACHE_NAME='deer-manager-sim-v11.3';
+/* Deer Manager Sim v11.4: network-first HTML, offline fallback, preserve localStorage. */
+const CACHE_NAME='deer-manager-sim-v11.4';
 const APP_FILES=['./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./version.json'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(names=>Promise.all(names.filter(name=>name.startsWith('deer-manager-sim-')&&name!==CACHE_NAME).map(name=>caches.delete(name)))).then(()=>self.clients.claim()))});
